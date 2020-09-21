@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Simple URL Shortener</title>
+    <link rel="stylesheet" href="https://unpkg.com/mvp.css">
+</head>
+
+<body>
+    <main>
+        <header>
+            <h1>Simple URL Shortener</h1>
+            <p>
+                Enter your URL below to retrieve the shortened version.
+            </p>
+        </header>
+        <section id="urlForm">
+            <form enctype="application/x-www-form-urlencoded" method="POST" action="/shorten">
+                <label for="url">
+                    URL to shorten
+                </label>
+                <input type="url" name="url" />
+                <button type="submit">Shorten</button>
+                <p id="urlResult">
+
+                </p>
+            </form>
+        </section>
+    </main>
+    <script>
+        let data = window.location.hash;
+        if (data) {
+
+            let url = new URL(data.substr(1));
+
+            if (url.protocol === window.location.protocol
+                && url.host === window.location.host) {
+                let section = document.getElementById('urlResult');
+                section.innerHTML = `<a id="link" href="${url}">${url}</a>`;
+            }
+        }
+
+    </script>
+</body>
+
+</html>
