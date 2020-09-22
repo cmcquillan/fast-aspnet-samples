@@ -23,7 +23,7 @@ var host = Host.CreateDefaultBuilder(args)
             {
                 endpoints.MapGet("/", (ctx) =>
                 {
-                    return ctx.Response.WriteAsync("Hello, World!");
+                    return ctx.Response.SendFileAsync("index.html");
                 });
             });
         });

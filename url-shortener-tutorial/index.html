@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Simple URL Shortener</title>
+    <link rel="stylesheet" href="https://unpkg.com/mvp.css">
+</head>
+
+<body>
+    <main>
+        <header>
+            <h1>Simple URL Shortener</h1>
+            <p>
+                Enter your URL below to retrieve the shortened version.
+            </p>
+        </header>
+        <section id="urlForm">
+            <form enctype="application/x-www-form-urlencoded" method="POST" action="/shorten">
+                <label for="url">
+                    URL
+                </label>
+                <input type="url" name="url" />
+                <button type="submit">Shorten</button>
+            </form>
+        </section>
+    </main>
+</body>
+
+</html>
