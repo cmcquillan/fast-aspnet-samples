@@ -31,8 +31,6 @@ var host = Host.CreateDefaultBuilder(args)
         })
         .Configure(app =>
         {
-            // app.UseStaticFiles();
-            // app.UseDefaultFiles();
             app.UseRouting();
             app.UseEndpoints((endpoints) =>
             {
